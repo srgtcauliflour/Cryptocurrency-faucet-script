@@ -146,13 +146,15 @@ class simple_faucet
 												if ($promo["minimum_payout"] >= $promo["maximum_payout"])
 													$this->promo_payout_amount = $promo["maximum_payout"];
 												else
-													$this->promo_payout_amount = mt_rand($promo["minimum_payout"]*10000,$promo["maximum_payout"]*10000)/10000; // calculate a random promo DOGE amount
+													$this->promo_payout_amount = $this->float_rand($promo["minimum_payout"],$promo["maximum_payout"]);
+													//$this->promo_payout_amount = mt_rand($promo["minimum_payout"]*10000,$promo["maximum_payout"]*10000)/10000; // calculate a random promo DOGE amount
 												if ($promo["uses"] > 0)
 													$this->db->query("UPDATE `".$this->config["mysql_table_prefix"]."promo_codes` SET `uses` = `uses`-1 WHERE `code` = '".$this->db->escape_string($promo_code)."'");
 												}
 											}
 										}
-									$this->payout_amount = mt_rand($this->config["minimum_payout"]*10000,$this->config["maximum_payout"]*10000)/10000; // calculate a random DOGE amount
+									//$this->payout_amount = mt_rand($this->config["minimum_payout"]*10000,$this->config["maximum_payout"]*10000)/10000; // calculate a random DOGE amount
+									$this->payout_amount = $this->float_rand($this->config["minimum_payout"],$this->config["maximum_payout"]);
 									$this->db->query("INSERT INTO `".$this->db->escape_string($this->config["mysql_table_prefix"])."payouts` (`payout_amount`,`ip_address`,`payout_address`,`promo_code`,`promo_payout_amount`,`timestamp`) VALUES ('".$this->payout_amount."','".$this->db->escape_string($_SERVER["REMOTE_ADDR"])."','".$this->db->escape_string($dogecoin_address)."','".$this->db->escape_string($promo_code)."','".$this->promo_payout_amount."',NOW())"); // insert the transaction into the payout log
 
 									if ($this->config["wallet_passphrase"] != "")
@@ -397,6 +399,20 @@ class simple_faucet
 					$this->rpc("walletlock"); // lock wallet
 				}
 			}
+		}
+
+	public function float_rand($min,$max,$round=8)
+		{
+		if ($min > $max)
+			{
+			$a = $min;
+			$min = $max;
+			$max = $a;
+			}
+		$f = $min + mt_rand() / mt_getrandmax() * ($max - $min);
+		if($round > 0)
+			return round($f,$round);
+		return $f;
 		}
 
 	protected function rpc($method,$params = array())
