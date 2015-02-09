@@ -96,7 +96,9 @@ $config = array(
 
 	// Faucet look and feel:
 	"title" => "Cryptocurrency faucet script", // page title, may be used by the template too
-	"template" => "default" // template to use (see the templates directory)
+	"template" => "default", // template to use (see the templates directory)
+    //code for advertisements:
+    "ads" => "<iframe></iframe>"
 	);
 
 
