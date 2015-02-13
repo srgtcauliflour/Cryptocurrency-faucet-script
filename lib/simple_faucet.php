@@ -302,6 +302,8 @@ class simple_faucet
 							return recaptcha_get_html(@$config["captcha_config"]["public_key"]);
 						}
 					return '';
+                                case "ads":
+                                    return $config['ads'];
 
 				default:
 					return $match[1];
