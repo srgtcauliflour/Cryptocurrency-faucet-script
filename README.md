@@ -5,6 +5,8 @@ Cryptocurrency-faucet-script
 
 DEMO: http://wow.bitcoinproject.net/
 
+For those who are looking for a faucet script that supports multiple coins:
+http://cryptocurrency-scripts.com/index.php?page=item&id=10
 
 Faucet features:
 
