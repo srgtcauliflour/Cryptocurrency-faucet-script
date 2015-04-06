@@ -69,7 +69,7 @@ $config = array(
 
 	"use_captcha" => true, // require the user to enter a captcha
 
-	"captcha" => "recaptcha", // valid options: recaptcha, recaptcha2
+	"captcha" => "recaptcha", // valid options: recaptcha, recaptcha2, solvemedia
 
 	"captcha_https" => false, // use https (only for recaptcha2) valid options: true, false
 
@@ -79,6 +79,12 @@ $config = array(
 		"public_key" => "publickey"
 		),
 
+	// enter your private and public solvemedia key here:
+	"solvemedia_config" => array(
+		"public_key" => "publickey",
+		"private_key" => "privatekey",
+		"hash_key" => "hashkey"
+	),
     
     // proxy filter:
 	"filter_proxies" => true, // whether to filter proxies or not. It's up to you to fill the proxy ban table. (see also the tor node cron job in ./lib/proxy_filter/cron/tor.php)
