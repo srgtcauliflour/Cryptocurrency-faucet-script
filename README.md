@@ -1,5 +1,34 @@
 Cryptocurrency-faucet-script
 ============================
+* The Faucet Script with SolveMedia as a Captcha!
+
+For Existing Faucets:
+
+Change 
+	`"captcha" => "solvemedia"`
+And 
+	"solvemedia_config" => array(
+		"public_key" => "publickey",
+		"private_key" => "privatekey",
+		"hash_key" => "hashkey"
+	)
+in `config.php`,
+
+Then overwrite `solvemedia.php` and `simple_faucet.php` in `/lib/`
+
+DOOOOOOOOONE!
+
+If you think it's useful -> Send a TIP: 17C8hjvLCYyEVpxwkPKH9KNXfRi69xwNT5
+
+Contact me ( hue.233#outlook.com ) if you want other captcha providers.
+
+
+
+
+Original:
+
+Cryptocurrency-faucet-script
+============================
 * A big THANK YOU goes to a friend who provided the script and requested to not be named.
 * We would love it if you let us know that you are using the script so we can showcase your website on bitcoinproject.net
 
