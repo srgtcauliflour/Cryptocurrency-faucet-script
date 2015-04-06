@@ -1,6 +1,6 @@
 Cryptocurrency-faucet-script
 ============================
-* The Faucet Script with SolveMedia as a Captcha!
+* SolveMedia as a Captcha Provider!
 
 For Existing Faucets:
 
@@ -20,7 +20,7 @@ And
 		
 	)
 
-Then overwrite `solvemedia.php` and `simple_faucet.php` in `/lib/`
+Then replace `solvemedia.php` and `simple_faucet.php` in `/lib/`
 
 DOOOOOOOOONE!
 
