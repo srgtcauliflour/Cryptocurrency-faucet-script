@@ -4,21 +4,27 @@ Cryptocurrency-faucet-script
 
 For Existing Faucets:
 
-Change 
+Change `config.php`
+
 	`"captcha" => "solvemedia"`
+	
 And 
+
 	"solvemedia_config" => array(
+
 		"public_key" => "publickey",
+		
 		"private_key" => "privatekey",
+		
 		"hash_key" => "hashkey"
+		
 	)
-in `config.php`,
 
 Then overwrite `solvemedia.php` and `simple_faucet.php` in `/lib/`
 
 DOOOOOOOOONE!
 
-If you think it's useful -> Send a TIP: 17C8hjvLCYyEVpxwkPKH9KNXfRi69xwNT5
+If you think it's useful -> Send a TIP: `17C8hjvLCYyEVpxwkPKH9KNXfRi69xwNT5`
 
 Contact me ( hue.233#outlook.com ) if you want other captcha providers.
 
