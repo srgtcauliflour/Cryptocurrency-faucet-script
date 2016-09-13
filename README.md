@@ -42,9 +42,3 @@ Go to your database and find the "sf_promo_codes table". Add a new line and set 
 - uses = 0 // Promo code disabled
 - uses = -1 // No limit on using this code
 - uses = 50 // The code counts down until 0 and works e.g. 50 times
-
-
-
-Feel free to donate :)
-- BTC: 1Av1sFhiWVzhcgxPMsZXni4q5fYCMtR2jE
-- DOGE: DLoveeefqGPuEqZvc7PXNt2mvu36YPXcGb
