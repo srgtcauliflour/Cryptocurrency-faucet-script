@@ -3,11 +3,6 @@ Cryptocurrency-faucet-script
 * A big THANK YOU goes to a friend who provided the script and requested to not be named.
 * We would love it if you let us know that you are using the script so we can showcase your website on bitcoinproject.net
 
-DEMO: http://wow.bitcoinproject.net/
-
-For those who are looking for a faucet script that supports multiple coins:
-http://cryptocurrency-scripts.com/index.php?page=item&id=10
-
 Faucet features:
 
 - Can be used for the most cryptocurrencys
