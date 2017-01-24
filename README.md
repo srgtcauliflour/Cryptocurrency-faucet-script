@@ -1,13 +1,12 @@
 Cryptocurrency-faucet-script
 ============================
 * A big THANK YOU goes to a friend who provided the script and requested to not be named.
-* We would love it if you let us know that you are using the script so we can showcase your website on bitcoinproject.net
 
 Faucet features:
 
-- Can be used for the most cryptocurrencys
+- Can be used for the most cryptocurrencies
 - Minimum and maximum payouts can be set
-- Payment system for staged,timed or direct payouts
+- Payment system for staged, timed or direct payouts
 - Recaptcha integrated (http://www.google.com/recaptcha/) IMPORTANT: Please note that Recaptcha2 can be set within the config file. Version 2 will be released shortly directly from google and is already implimented within the script.
 - Proxies filter option
 - Promocodes possible for extra payouts
