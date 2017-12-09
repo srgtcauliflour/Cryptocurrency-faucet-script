@@ -70,6 +70,8 @@ class simple_faucet
 			require_once('./lib/recaptchalib.php');
 		elseif ($this->config["captcha"] == "recaptcha2")
 			require_once('./lib/recaptchalib2.php');
+		elseif ($this->config["captcha"] == "solvemedia")
+			require_once('./lib/solvemedia.php');
 
 		if (isset($config["rpc_user"],$config["rpc_password"],$config["rpc_host"],$config["rpc_port"],$config["mysql_user"],$config["mysql_password"],$config["mysql_host"],$config["mysql_database"]))
 			{
@@ -300,6 +302,8 @@ class simple_faucet
 						{
 						if ($config["captcha"] == "recaptcha" || $config["captcha"] == "recaptcha2")
 							return recaptcha_get_html(@$config["captcha_config"]["public_key"]);
+						if ($config["captcha"] == "solvemedia")
+							return solvemedia_get_html(@$config["solvemedia_config"]["public_key"]);
 						}
 					return '';
                                 case "ads":
@@ -351,6 +355,15 @@ class simple_faucet
 		if ($this->config["captcha"] == "recaptcha")
 			{
 			$resp = @recaptcha_check_answer($this->config["captcha_config"]["private_key"],$_SERVER["REMOTE_ADDR"],@$_POST["recaptcha_challenge_field"],@$_POST["recaptcha_response_field"]);
+			return $resp->is_valid; // $resp->error;
+			}
+		elseif ($this->config["captcha"] == "solvemedia")
+			{
+			$resp = @solvemedia_check_answer($this->config["solvemedia_config"]["private_key"],
+										$_SERVER["REMOTE_ADDR"],
+										@$_POST["adcopy_challenge"],
+										@$_POST["adcopy_response"],
+										$this->config["solvemedia_config"]["hash_key"]);
 			return $resp->is_valid; // $resp->error;
 			}
 		else
