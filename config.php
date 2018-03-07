@@ -32,27 +32,27 @@ SOFTWARE.
 $config = array(
     
     // e.g. Dogecoin
-    "coinname" => "Coinname",
+    "coinname" => "Strayacoin",
     
 	// RPC settings:
 	// These are the settings you put into e.g. dogecoin.conf. They allow the faucet to interact with your wallet
-    "rpc_user" => "rpcuser",
-	"rpc_password" => "rpcpassword",
-	"rpc_host" => "rpchost",
-	"rpc_port" => "rpcport",
+    "rpc_user" => "47crypt0user",
+	"rpc_password" => "47crypt0user",
+	"rpc_host" => "localhost",
+	"rpc_port" => "9432",
 
 	// MySQL settings:
-    "mysql_user" => "db_user",
-	"mysql_password" => "db_password",
+    "mysql_user" => "dam",
+	"mysql_password" => "",
 	"mysql_host" => "localhost",
-	"mysql_database" => "db_name", // faucet database name
+	"mysql_database" => "faucet", // faucet database name
 	"mysql_table_prefix" => "sf_", // table prefix to use
 
 	// Coin values:
 	"minimum_payout" => 1, // minimum coins to be awarded
-	"maximum_payout" => 6, // maximum coins to be awarded
-	"payout_threshold" => 10, // payout threshold, if the faucet contains less coins than this, display the 'dry_faucet' message
-	"payout_interval" => "1h", // payout interval, the wait time for a user between payouts. Type any numerical value with either a "m" (minutes), "h" (hours), or "d" (days), attached. Examples: 50m for a 50 minute delay, 7h for a 7 hour delay, etc.
+	"maximum_payout" => 5, // maximum coins to be awarded
+	"payout_threshold" => 20, // payout threshold, if the faucet contains less coins than this, display the 'dry_faucet' message
+	"payout_interval" => "1m", // payout interval, the wait time for a user between payouts. Type any numerical value with either a "m" (minutes), "h" (hours), or "d" (days), attached. Examples: 50m for a 50 minute delay, 7h for a 7 hour delay, etc.
 
     
     // Payment system:
@@ -67,7 +67,7 @@ $config = array(
 	// "both": check both the IP and coins address in the payout history.
 	"user_check" => "both",
 
-	"use_captcha" => true, // require the user to enter a captcha
+	"use_captcha" => false, // require the user to enter a captcha
 
 	"captcha" => "recaptcha", // valid options: recaptcha, recaptcha2, solvemedia
 
@@ -87,7 +87,7 @@ $config = array(
 	),
     
     // proxy filter:
-	"filter_proxies" => true, // whether to filter proxies or not. It's up to you to fill the proxy ban table. (see also the tor node cron job in ./lib/proxy_filter/cron/tor.php)
+	"filter_proxies" => false, // whether to filter proxies or not. It's up to you to fill the proxy ban table. (see also the tor node cron job in ./lib/proxy_filter/cron/tor.php)
 	"proxy_filter_use_faucet_database" => false, // whether the proxy filter should use the faucet database connection or not. (if set to false, the proxy filter will connect to the database set in ./lib/proxy_filter/config.php)
     
     // promo codes:
@@ -98,13 +98,13 @@ $config = array(
 	"wallet_passphrase" => "",
 
 	// Donation address:
-	"donation_address" => "DTiUqjQTXwgZfvcTcdoabp7uLezK47TPkN", // donation address to display
+	"donation_address" => "ShDN7iDPjvenYXTrrBfzLKmHe3ffavnsTT", // donation address to display
 
 	// Faucet look and feel:
-	"title" => "Cryptocurrency faucet script", // page title, may be used by the template too
+	"title" => "Fountain of Nah", // page title, may be used by the template too
 	"template" => "default", // template to use (see the templates directory)
     //code for advertisements:
-    "ads" => "<iframe></iframe>"
+    "ads" => "<iframe>Strayacoin.org</iframe>"
 	);
 
 
